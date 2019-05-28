@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>WEBSOCKET TEST</h1>
+<script>
+    let loc = window.location;
+    let endpoint = 'ws://'+ loc.host + loc.pathname;
+    const socket = new WebSocket(endpoint);
+
+    socket.onmessage = (e) => {
+        console.log("message", e);
+    };
+    socket.onopen = (e) => {
+        console.log("open", e);
+    };
+    socket.onerror = (e) => {
+        console.log("error", e);
+    };
+    socket.onclose = (e) => {
+        console.log("close", e);
+    };
+</script>
+</body>
+</html>
